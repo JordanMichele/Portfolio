@@ -7,18 +7,19 @@
   transition: all 0.5s ease-out; }
   .menu-btn .btn-line {
     width: 28px;
-    height: 3px;
+    height: 5px;
+    border-radius: 2px;
     margin: 0 0 5px 0;
     background: #fff;
     transition: all 0.5s ease-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px); }
+      transform: rotate(45deg) translate(5px, 8px); }
     .menu-btn.close .btn-line:nth-child(2) {
       opacity: 0; }
     .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px); }
+      transform: rotate(-45deg) translate(7px, -8px); }
 
 .menu {
   position: fixed;
@@ -53,9 +54,9 @@
       transform: translate3d(0, 0, 0); }
     .menu-branding .portrait {
       width: 150px;
-      height: 250px;
-      background: url("../img/Portrait.jpg") no-repeat;
-      background-position: center;
+      height: 300px;
+      background: url("../img/p4.png") no-repeat;
+      background-position: 48% 42%;
       border-radius: 25%;
       border: solid 6px #444; }
   .menu .nav-item {
@@ -101,7 +102,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
-    background: url(../img/background.jpg);
+    background: url(../img/tracks.jpg);
     background-attachment: fixed;
     background-size: cover; }
     body#bg-img:after {
@@ -112,7 +113,7 @@ body {
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: rgba(68, 68, 68, 0.9); }
+      background: rgba(68, 68, 68, 0.7); }
 
 h1,
 h2,
@@ -122,7 +123,9 @@ h3 {
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
-    font-size: 6rem; }
+    font-size: 6rem;
+    align-items: center;
+    text-align: center; }
   h1.sm-heading,
   h2.sm-heading,
   h3.sm-heading {
@@ -147,6 +150,7 @@ main {
   padding: 4rem;
   min-height: calc(100vh - 60px); }
   main .icons {
+    text-align: center;
     margin-top: 1rem; }
     main .icons a {
       padding: 0.4rem; }
@@ -156,7 +160,8 @@ main {
   main#home {
     overflow: hidden; }
     main#home h1 {
-      margin-top: 20vh; }
+      text-align: center;
+      margin-top: 5vh; }
 
 .about-info {
   display: grid;
@@ -164,8 +169,15 @@ main {
   grid-template-areas: "bioimage bio bio" "job1 job2 job3";
   grid-template-columns: repeat(3, 1fr); }
 
+.indented {
+  text-indent: 50px; }
+
 .bio-image {
   grid-area: bioimage;
+  width: 100%;
+  height: auto;
+  background-size: contain;
+  transform: rotate(-90deg);
   margin: auto;
   border-radius: 25%;
   border: #8dcac8 3px solid; }
@@ -193,7 +205,11 @@ main {
   grid-gap: 0.7rem;
   grid-template-columns: repeat(3, 1fr); }
   .projects img {
-    width: 100%;
+    width: 250px;
+    height: 250px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
     border: 3px #fff solid;
     border-radius: 5px; }
     .projects img:hover {
@@ -222,6 +238,7 @@ main {
 
 .btn, .btn-dark, .btn-light {
   display: block;
+  width: 250px;
   padding: 0.5rem 1rem;
   border: 0;
   border-radius: 5px;
@@ -251,15 +268,18 @@ main {
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); }
+  .bio-image {
+    height: 163px;
+    width: 250px; }
+  .bio {
+    grid-area: bio;
+    font-size: 1.2rem; } }
 
 @media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
+  main .lg-heading {
+    line-height: 1;
+    margin-bottom: 1rem; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -269,25 +289,33 @@ main {
     div.menu-branding.show {
       transform: translate3d(0, 0, 0); }
   .menu-nav {
-    height: 75vh;
+    height: 65vh;
     transform: translate3d(-100%, 0, 0);
     font-size: 24px; }
   .menu-branding {
-    height: 25vh;
+    height: 35vh;
     transform: translate3d(100%, 0, 0); }
     .menu-branding .portrait {
-      background: url("../img/Portrait.jpg");
+      background: url("../img/p4.png");
       width: 150px;
-      height: 150px; }
+      height: 190px;
+      background-position: 48% 40%; }
   .about-info {
     grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
     grid-template-columns: 1fr; }
+  .bio-image {
+    height: 250px;
+    width: 250px; }
+  .bio {
+    grid-area: bio;
+    font-size: 1.2rem; }
   .projects {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
-    margin-top: 10vh; }
+    margin-top: 10vh;
+    font-size: 5rem; }
   .projects {
     grid-template-columns: 1fr; }
   main#contact h1 {
@@ -295,4 +323,9 @@ main {
   main#contact h2 {
     font-size: 26px; }
   div#contactInfo {
-    font-size: 20px; } }
+    font-size: 20px; }
+  .bio-image {
+    margin-top: 10px; }
+  .bio {
+    grid-area: bio;
+    font-size: 0.9rem; } }

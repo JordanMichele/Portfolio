@@ -9,7 +9,8 @@
 
   .btn-line {
     width: 28px;
-    height: 3px;
+    height: 5px;
+    border-radius: 2px;
     margin: 0 0 5px 0;
     background: set-text-color($primary-color);
     @include easeOut;
@@ -22,7 +23,8 @@
     .btn-line {
       // Line 1 - Rotate
       &:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        //transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg) translate(5px, 8px);
       }
       //Line 2 - Hide
       &:nth-child(2) {
@@ -30,7 +32,7 @@
       }
       // Line 3 - Rotate
       &:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        transform: rotate(-45deg) translate(7px, -8px);
       }
     }
   }
@@ -87,9 +89,9 @@
 
     .portrait {
       width: 150px;
-      height: 250px;
-      background: url("../img/Portrait.jpg") no-repeat;
-      background-position: center;
+      height: 300px;
+      background: url("../img/p4.png") no-repeat;
+      background-position: 48% 42%;
       border-radius: 25%;
       border: solid 6px $primary-color;
     }
