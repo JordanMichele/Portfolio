@@ -269,7 +269,7 @@ main {
   .projects {
     grid-template-columns: repeat(3, 1fr); }
   .bio-image {
-    height: 300px;
+    height: 350px;
     width: 300px; }
   .bio {
     grid-area: bio;
@@ -304,7 +304,7 @@ main {
     grid-template-columns: 1fr; }
   .bio-image {
     height: 250px;
-    width: 250px; }
+    width: 200px; }
   .bio {
     grid-area: bio;
     font-size: 1.2rem; }
